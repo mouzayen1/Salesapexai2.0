@@ -1,0 +1,96 @@
+{
+  "id": "westlake",
+  "name": "Westlake Financial",
+  "approved": true,
+  "active": true,
+  "lastUpdated": "2025-01-13",
+  "advanceType": "cost_based",
+  "advanceConfig": {
+    "tierAdvances": {
+      "platinum": 1.12,
+      "gold": 1.10,
+      "standard": 1.08
+    },
+    "dealerTierPenalty": 0.025
+  },
+  "fees": {
+    "docFee": 799,
+    "originationFee": 595,
+    "holdbackPercent": 0.02,
+    "miscFees": 150
+  },
+  "terms": {
+    "allowedTerms": [36, 48, 60, 72],
+    "preferredTerms": [60, 72]
+  },
+  "limits": {
+    "minAmountFinanced": 5000,
+    "maxAmountFinanced": 45000,
+    "maxBackendTotal": 3500,
+    "maxBackendPercentOfAmount": 25
+  },
+  "vehicleRequirements": {
+    "maxAgeYears": 20,
+    "maxMileage": 180000,
+    "excludedMakes": ["Daewoo", "Ferrari"],
+    "riskMultipliers": {
+      "kia_2011_2021": 0.90,
+      "hyundai_2011_2021": 0.90
+    }
+  },
+  "creditTiers": {
+    "deep_subprime": {
+      "minApr": 22,
+      "maxApr": 27,
+      "minDownPercent": 0.10,
+      "baseAdvancePercent": 115,
+      "maxAdvancePercent": 145,
+      "maxLtvPercent": 145,
+      "ficoRange": "300-499"
+    },
+    "subprime": {
+      "minApr": 18,
+      "maxApr": 23,
+      "minDownPercent": 0.10,
+      "baseAdvancePercent": 115,
+      "maxAdvancePercent": 140,
+      "maxLtvPercent": 140,
+      "ficoRange": "500-599"
+    },
+    "near_prime": {
+      "minApr": 12,
+      "maxApr": 18,
+      "minDownPercent": 0.05,
+      "baseAdvancePercent": 110,
+      "maxAdvancePercent": 130,
+      "maxLtvPercent": 130,
+      "ficoRange": "600-669"
+    },
+    "prime": {
+      "minApr": 8,
+      "maxApr": 12,
+      "minDownPercent": 0.00,
+      "baseAdvancePercent": 105,
+      "maxAdvancePercent": 120,
+      "maxLtvPercent": 120,
+      "ficoRange": "670+"
+    }
+  },
+  "validationRules": {
+    "minDownPaymentDollars": null,
+    "minDownPaymentPercent": 0.05,
+    "requiresProofOfIncome": true,
+    "requiresProofOfResidence": true,
+    "maxPtiByTier": {
+      "deep_subprime": 0.25,
+      "subprime": 0.20,
+      "near_prime": 0.18,
+      "prime": 0.15
+    }
+  },
+  "notes": [
+    "Cost-based advance calculation",
+    "Dealer tier affects advance percentage",
+    "Theft risk penalty for Kia/Hyundai 2011-2021"
+  ]
+}

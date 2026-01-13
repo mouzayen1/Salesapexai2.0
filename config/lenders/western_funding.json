@@ -1,0 +1,106 @@
+{
+  "id": "western_funding",
+  "name": "Western Funding",
+  "approved": true,
+  "active": true,
+  "lastUpdated": "2025-01-13",
+  "advanceType": "payment_based",
+  "advanceConfig": {
+    "paymentMultiplierRange": {
+      "min": 1.20,
+      "max": 1.45
+    },
+    "creditMultipliers": {
+      "deep_subprime": 1.20,
+      "subprime": 1.325,
+      "near_prime": 1.38,
+      "prime": 1.45
+    }
+  },
+  "fees": {
+    "docFee": 695,
+    "originationFee": 495,
+    "holdbackPercent": 0.025,
+    "miscFees": 125
+  },
+  "terms": {
+    "allowedTerms": [48, 60, 72, 84],
+    "preferredTerms": [72, 84]
+  },
+  "limits": {
+    "minAmountFinanced": 4000,
+    "maxAmountFinanced": 40000,
+    "maxBackendTotal": 4000,
+    "maxBackendPercentOfAmount": 30
+  },
+  "vehicleRequirements": {
+    "maxAgeYears": 15,
+    "maxMileage": 180000,
+    "excludedMakes": ["Land Rover", "Jaguar", "Saab", "Suzuki"],
+    "preferredMakes": {
+      "Toyota": 1.05,
+      "Honda": 1.05
+    },
+    "riskMultipliers": {
+      "kia_2011_2021": 0.80,
+      "hyundai_2011_2021": 0.80
+    }
+  },
+  "creditTiers": {
+    "deep_subprime": {
+      "minApr": 24,
+      "maxApr": 29,
+      "minDownPercent": 0.08,
+      "baseAdvancePercent": 120,
+      "maxAdvancePercent": 150,
+      "maxLtvPercent": 150,
+      "ficoRange": "300-499"
+    },
+    "subprime": {
+      "minApr": 20,
+      "maxApr": 25,
+      "minDownPercent": 0.08,
+      "baseAdvancePercent": 115,
+      "maxAdvancePercent": 145,
+      "maxLtvPercent": 145,
+      "ficoRange": "500-599"
+    },
+    "near_prime": {
+      "minApr": 14,
+      "maxApr": 20,
+      "minDownPercent": 0.05,
+      "baseAdvancePercent": 110,
+      "maxAdvancePercent": 135,
+      "maxLtvPercent": 135,
+      "ficoRange": "600-669"
+    },
+    "prime": {
+      "minApr": 9,
+      "maxApr": 14,
+      "minDownPercent": 0.00,
+      "baseAdvancePercent": 105,
+      "maxAdvancePercent": 125,
+      "maxLtvPercent": 125,
+      "ficoRange": "670+"
+    }
+  },
+  "validationRules": {
+    "minDownPaymentDollars": null,
+    "minDownPaymentPercent": 0.08,
+    "requiresProofOfIncome": true,
+    "requiresProofOfResidence": true,
+    "maxPtiByTier": {
+      "deep_subprime": 0.25,
+      "subprime": 0.20,
+      "near_prime": 0.18,
+      "prime": 0.15
+    }
+  },
+  "notes": [
+    "Payment-based advance calculation",
+    "Higher advances for better credit tiers",
+    "Offers 84-month terms for subprime",
+    "Preferred makes (Toyota, Honda) get 5% advance bonus",
+    "Heavy penalty for Kia/Hyundai theft risk vehicles"
+  ]
+}

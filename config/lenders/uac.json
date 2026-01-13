@@ -1,0 +1,123 @@
+{
+  "id": "uac",
+  "name": "United Auto Credit",
+  "approved": true,
+  "active": true,
+  "lastUpdated": "2025-01-13",
+  "advanceType": "risk_adjusted",
+  "advanceConfig": {
+    "baseAdvance": 1.10,
+    "riskAdjustmentRange": {
+      "min": -0.10,
+      "max": 0.08
+    },
+    "riskFactors": {
+      "creditTier": {
+        "prime": 30,
+        "near_prime": 15,
+        "subprime": 0,
+        "deep_subprime": -20
+      },
+      "downPaymentBonus": {
+        "20percent": 15,
+        "15percent": 10,
+        "10percent": 5
+      },
+      "vehicleAgePenalty": {
+        "over10years": -15,
+        "over7years": -10,
+        "over5years": -5
+      },
+      "mileagePenalty": {
+        "over150k": -15,
+        "over120k": -10,
+        "over90k": -5
+      },
+      "makeAdjustment": {
+        "preferred": ["toyota", "honda", "lexus", "subaru"],
+        "preferredBonus": 10,
+        "risky": ["kia", "hyundai", "nissan", "dodge"],
+        "riskyPenalty": -10
+      }
+    }
+  },
+  "fees": {
+    "docFee": 650,
+    "originationFee": 450,
+    "holdbackPercent": 0.018,
+    "miscFees": 100
+  },
+  "terms": {
+    "allowedTerms": [36, 48, 60, 72],
+    "preferredTerms": [60, 72]
+  },
+  "limits": {
+    "minAmountFinanced": 5000,
+    "maxAmountFinanced": 50000,
+    "maxBackendTotal": 3000,
+    "maxBackendPercentOfAmount": 20
+  },
+  "vehicleRequirements": {
+    "maxAgeYears": 15,
+    "maxMileage": 150000,
+    "excludedMakes": ["Land Rover"],
+    "riskMultipliers": {}
+  },
+  "creditTiers": {
+    "deep_subprime": {
+      "minApr": 23,
+      "maxApr": 28,
+      "minDownPercent": 0.10,
+      "baseAdvancePercent": 115,
+      "maxAdvancePercent": 140,
+      "maxLtvPercent": 140,
+      "ficoRange": "300-499"
+    },
+    "subprime": {
+      "minApr": 19,
+      "maxApr": 24,
+      "minDownPercent": 0.10,
+      "baseAdvancePercent": 112,
+      "maxAdvancePercent": 135,
+      "maxLtvPercent": 135,
+      "ficoRange": "500-599"
+    },
+    "near_prime": {
+      "minApr": 14,
+      "maxApr": 20,
+      "minDownPercent": 0.05,
+      "baseAdvancePercent": 108,
+      "maxAdvancePercent": 125,
+      "maxLtvPercent": 125,
+      "ficoRange": "600-669"
+    },
+    "prime": {
+      "minApr": 9,
+      "maxApr": 14,
+      "minDownPercent": 0.00,
+      "baseAdvancePercent": 105,
+      "maxAdvancePercent": 120,
+      "maxLtvPercent": 120,
+      "ficoRange": "670+"
+    }
+  },
+  "validationRules": {
+    "minDownPaymentDollars": 500,
+    "minDownPaymentPercent": null,
+    "requiresProofOfIncome": true,
+    "requiresProofOfResidence": true,
+    "maxPtiByTier": {
+      "deep_subprime": 0.25,
+      "subprime": 0.20,
+      "near_prime": 0.18,
+      "prime": 0.15
+    }
+  },
+  "notes": [
+    "Risk-adjusted advance calculation using composite score",
+    "Score based on credit, down payment, vehicle age, mileage, and make",
+    "Requires minimum $500 down payment",
+    "Lower max mileage (150k) than competitors",
+    "Higher max amount financed ($50k)"
+  ]
+}
